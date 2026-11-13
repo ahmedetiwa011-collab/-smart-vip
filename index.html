@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#0755b8">
+<title>SMART VIP | خدمات العملاء</title>
+<style>
+:root{--blue:#0755b8;--navy:#092c61;--bg:#f3f7ff;--ink:#132b4d;--muted:#65758d}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(180deg,#eaf2ff,#f8faff 360px);font-family:Tahoma,Arial,sans-serif;color:var(--ink)}
+.wrap{max-width:760px;margin:auto;padding:18px}
+.hero{background:linear-gradient(125deg,#176bd5,#082c68);color:#fff;border-radius:25px;padding:25px 22px;box-shadow:0 14px 35px #0b4da52b;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;width:210px;height:210px;border:1px solid #ffffff25;border-radius:50%;left:-55px;top:-90px;box-shadow:0 0 0 25px #ffffff0c,0 0 0 55px #ffffff0a}
+.brand{font-size:13px;letter-spacing:3px;font-weight:bold;color:#cfe2ff}.hero h1{font-size:30px;margin:12px 0 7px}.hero p{margin:0;color:#e1edff;line-height:1.8}
+.pill{display:inline-block;margin-top:17px;background:#ffffff1b;border:1px solid #ffffff35;padding:7px 12px;border-radius:30px;font-size:12px}
+.section-title{margin:28px 4px 14px;font-size:19px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.tile{border:1px solid #e0e9f8;background:#fff;border-radius:20px;padding:18px;text-align:right;box-shadow:0 7px 20px #173b7010;cursor:pointer;transition:.15s}
+.tile:active{transform:scale(.98)}.ico{width:48px;height:48px;border-radius:15px;display:grid;place-items:center;font-size:25px;margin-bottom:12px;background:#eaf2ff}
+.tile h3{margin:0 0 7px;font-size:16px}.tile p{margin:0;color:var(--muted);font-size:12px;line-height:1.7}
+.tile.wide{grid-column:1/-1;display:flex;align-items:center;gap:14px}.tile.wide .ico{flex-shrink:0;margin:0}
+.info-card{background:#fff;border:1px solid #e0e9f8;border-radius:18px;padding:17px;margin-top:13px;box-shadow:0 7px 20px #173b7010}
+.info-card h3{margin:0 0 8px;font-size:16px}.info-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.8}
+.speed-link{display:inline-block;margin-top:12px;padding:10px 14px;border-radius:11px;background:#0755b8;color:#fff;text-decoration:none;font-size:13px;font-weight:bold}
+.faq details{border-top:1px solid #e8eef7;padding:12px 0}.faq summary{cursor:pointer;font-weight:bold;font-size:13px}.faq details p{padding-top:8px}
+.support{margin-top:18px;padding:18px;border-radius:18px;background:#e7f0ff;border:1px solid #cbdfff;display:flex;gap:12px;align-items:center}
+.support b{display:block;margin-bottom:5px}.support small{color:var(--muted);line-height:1.7}
+footer{text-align:center;color:#7b8ba2;font-size:11px;padding:24px 8px}
+.modal{display:none;position:fixed;inset:0;background:#061a36a8;z-index:5;padding:16px;align-items:center;justify-content:center}
+.modal.show{display:flex}.panel{background:#fff;border-radius:22px;padding:22px;width:min(100%,490px);max-height:92vh;overflow:auto;box-shadow:0 20px 60px #00163855}
+.panel-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.panel h2{font-size:20px;margin:0}.close{border:0;background:#eef3fb;border-radius:50%;width:36px;height:36px;font-size:21px;cursor:pointer}
+label{display:block;font-size:13px;font-weight:bold;margin:13px 0 7px}input,select,textarea{width:100%;border:1px solid #d8e2f1;border-radius:12px;padding:13px;font:inherit;font-size:14px;background:#fbfdff;color:var(--ink)}textarea{min-height:95px;resize:vertical}
+.send{width:100%;border:0;border-radius:13px;padding:14px;background:var(--blue);color:#fff;font:inherit;font-weight:bold;margin-top:17px;cursor:pointer}.copy-actions{display:none;gap:8px;flex-wrap:wrap;margin-top:12px}.copy-actions button{flex:1;min-width:125px;border:1px solid #cbdcf5;border-radius:11px;padding:11px;background:#edf4ff;color:var(--navy);font:inherit;font-size:13px;font-weight:bold;cursor:pointer}.copy-actions button.primary-copy{background:#0755b8;color:#fff;border-color:#0755b8}.copy-status{min-height:20px;color:#167044;font-size:12px;margin-top:8px}.hint{font-size:11px;color:var(--muted);line-height:1.7;margin-top:10px}
+@media(max-width:420px){.wrap{padding:12px}.hero h1{font-size:25px}.grid{gap:10px}.tile{padding:14px}.tile h3{font-size:14px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="hero">
+  <div class="brand">SMART VIP</div>
+  <h1>خدمات العملاء</h1>
+  <p>كل خدمات الإنترنت وطلباتك في مكان واحد.<br>اختار الخدمة وابعث طلبك بسهولة.</p>
+  <span class="pill">دعم ومتابعة طلبات العملاء</span>
+</header>
+<h2 class="section-title">تحب نساعدك في إيه؟</h2>
+<main class="grid">
+  <button class="tile" onclick="openForm('شكوى / مشكلة في الإنترنت')"><div class="ico">🛠️</div><h3>الشكاوى</h3><p>بلّغ عن انقطاع أو ضعف الإنترنت أو أي مشكلة.</p></button>
+  <button class="tile" onclick="openForm('طلب رفع السرعة')"><div class="ico">🚀</div><h3>رفع السرعة</h3><p>قدّم طلب تعديل أو رفع سرعة الخدمة.</p></button>
+  <button class="tile wide" onclick="openForm('طلب اشتراك / باقة جديدة')"><div class="ico">📦</div><div><h3>طلب باقة جديدة</h3><p>اختار الباقة المناسبة واطلب الاشتراك.</p></div></button>
+  <button class="tile wide" onclick="openForm('استفسار / طلب آخر')"><div class="ico">💬</div><div><h3>استفسار أو طلب آخر</h3><p>اكتب سؤالك وسيتم استلام طلبك على واتساب.</p></div></button>
+</main>
+
+<h2 class="section-title">حالة الشبكة</h2>
+<section class="info-card">
+ <h3>📡 متابعة حالة SMART VIP</h3>
+ <p>تابع هنا تنبيهات الأعطال والصيانة التي تعلنها الإدارة. في الوقت الحالي لا توجد حالة مباشرة متصلة بالسيرفر؛ يتم تحديث التنبيهات عند صدورها من الإدارة.</p>
+</section>
+
+<h2 class="section-title">اختبر سرعة الإنترنت</h2>
+<section class="info-card">
+ <h3>⚡ اختبار سرعة الاتصال</h3>
+ <p>افتح اختبار السرعة وأنت متصل بشبكة SMART VIP للحصول على نتيجة أقرب لسرعة اتصالك الحالية.</p>
+ <a class="speed-link" href="https://speed.cloudflare.com/" target="_blank" rel="noopener">ابدأ اختبار السرعة</a>
+</section>
+
+<h2 class="section-title">حل المشاكل الشائعة</h2>
+<section class="info-card faq">
+ <details><summary>الإنترنت فاصل تمامًا</summary><p>تأكد أن جهاز الراوتر أو جهاز الاستقبال يعمل، ثم افصل الكهرباء عنه لمدة 30 ثانية وأعد تشغيله. لو المشكلة مستمرة، ابعت شكوى من قسم الشكاوى.</p></details>
+ <details><summary>السرعة ضعيفة أو الإنترنت بطيء</summary><p>جرّب الاختبار وأوقف التحميلات على الأجهزة الأخرى مؤقتًا. لو البطء مستمر، سجّل نتيجة الاختبار وأرسلها مع الشكوى.</p></details>
+ <details><summary>الواي فاي ظاهر لكن مفيش إنترنت</summary><p>أعد تشغيل الراوتر، وتأكد أن الباقة سارية. لو المشكلة مستمرة، تواصل مع الإدارة واذكر وقت بداية المشكلة.</p></details>
+ <details><summary>عايز أطلب باقة أو أرفع السرعة</summary><p>استخدم قسم «طلب باقة جديدة» أو «طلب رفع السرعة» أعلى الصفحة، واكتب بياناتك بوضوح.</p></details>
+</section>
+
+<div class="support"><div style="font-size:30px">🎧</div><div><b>SMART VIP في خدمتك</b><small>املأ بياناتك واضغط إرسال الطلب لفتح واتساب برسالة جاهزة للإدارة.</small></div></div>
+<footer>SMART VIP · خدمات الإنترنت والدعم الفني</footer>
+</div>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true">
+ <div class="panel">
+  <div class="panel-head"><h2 id="formTitle">تقديم طلب</h2><button class="close" onclick="closeForm()" aria-label="إغلاق">×</button></div>
+  <form id="requestForm">
+   <label for="name">اسم العميل</label><input id="name" required maxlength="70" placeholder="اكتب اسمك">
+   <label for="phone">رقم الموبايل</label><input id="phone" required inputmode="tel" maxlength="20" placeholder="رقم للتواصل معك">
+   <div id="packageWrap" style="display:none"><label for="package">اختار الباقة</label><select id="package">
+    <option value="">اختر الباقة</option>
+    <option>15 جيجا - 60 جنيه</option><option>20 جيجا - 80 جنيه</option>
+    <option>25 جيجا - 100 جنيه</option><option>30 جيجا - 120 جنيه</option>
+    <option>40 جيجا - 160 جنيه</option><option>60 جيجا - 240 جنيه</option>
+    <option>100 جيجا - 360 جنيه</option>
+   </select></div>
+   <label for="details">تفاصيل الطلب</label><textarea id="details" required placeholder="اكتب تفاصيل المشكلة أو الطلب..."></textarea>
+   <button class="send" type="submit">تجهيز الطلب</button>
+   <div class="copy-actions" id="copyActions">
+    <button class="primary-copy" type="button" onclick="sendWhatsApp()">إرسال الطلب عبر واتساب</button>
+    <button type="button" onclick="copyPart('message')">نسخ الرسالة كاملة</button>
+    <button type="button" onclick="copyPart('phone')">نسخ رقم العميل</button>
+    <button type="button" onclick="copyPart('details')">نسخ التفاصيل فقط</button>
+   </div>
+   <div class="copy-status" id="copyStatus" aria-live="polite"></div>
+   <p class="hint">بعد تجهيز الطلب، اختار ما تريد نسخه ثم الصقه في محادثة واتساب SMART VIP وأرسله بنفسك.</p>
+  </form>
+ </div>
+</div>
+<script>
+let currentType='';
+let preparedRequest=null;
+function openForm(type){
+ currentType=type;
+ preparedRequest=null;
+ document.getElementById('formTitle').textContent=type;
+ document.getElementById('packageWrap').style.display=type.includes('باقة')?'block':'none';
+ document.getElementById('copyActions').style.display='none';
+ document.getElementById('copyStatus').textContent='';
+ document.getElementById('modal').classList.add('show');
+}
+function closeForm(){document.getElementById('modal').classList.remove('show')}
+document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeForm()});
+document.getElementById('requestForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ const name=document.getElementById('name').value.trim();
+ const phone=document.getElementById('phone').value.trim();
+ const details=document.getElementById('details').value.trim();
+ const pack=document.getElementById('package').value;
+ if(!name||!phone||!details){alert('من فضلك اكتب الاسم ورقم الموبايل وتفاصيل الطلب');return}
+ if(currentType.includes('باقة')&&!pack){alert('من فضلك اختار الباقة');return}
+ preparedRequest={
+  phone:phone,
+  details:details,
+  message:`طلب جديد من موقع SMART VIP\nالاسم: ${name}\nرقم العميل: ${phone}\nنوع الطلب: ${currentType}${pack?'\nالباقة: '+pack:''}\nالتفاصيل: ${details}`
+ };
+ document.getElementById('copyActions').style.display='flex';
+ document.getElementById('copyStatus').textContent='طلبك جاهز. اضغط «إرسال الطلب عبر واتساب» لإرساله للإدارة.';
+});
+async function copyPart(part){
+ if(!preparedRequest)return;
+ const value=part==='phone'?preparedRequest.phone:part==='details'?preparedRequest.details:preparedRequest.message;
+ try{
+  await navigator.clipboard.writeText(value);
+  document.getElementById('copyStatus').textContent=part==='phone'?'تم نسخ رقم العميل.':part==='details'?'تم نسخ تفاصيل الطلب.':'تم نسخ الرسالة كاملة.';
+ }catch(err){
+  const field=document.createElement('textarea');
+  field.value=value;
+  document.body.appendChild(field);
+  field.select();
+  const ok=document.execCommand('copy');
+  field.remove();
+  document.getElementById('copyStatus').textContent=ok?'تم النسخ بنجاح.':'تعذر النسخ تلقائيًا؛ حاول النسخ يدويًا.';
+ }
+}
+
+function sendWhatsApp(){
+ if(!preparedRequest)return;
+ const adminNumber='201501026528';
+ const url='https://wa.me/'+adminNumber+'?text='+encodeURIComponent(preparedRequest.message);
+ window.location.href=url;
+}
+</script>
+</body>
+</html>
